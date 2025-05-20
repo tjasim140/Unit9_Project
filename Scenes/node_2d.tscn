@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmkpw2js0qojk"]
+
+[ext_resource type="Texture2D" uid="uid://dfjd0kbf3jygh" path="res://Assets/white.jpeg" id="1_44stu"]
+[ext_resource type="Texture2D" uid="uid://b6m3msw6etdh7" path="res://Assets/square.png" id="2_pndna"]
+[ext_resource type="Script" path="res://Scripts/Piece.gd" id="3_clobl"]
+[ext_resource type="Texture2D" uid="uid://t52nmr5us0hf" path="res://Assets/teddy.WEBP" id="4_koyvg"]
+
+[node name="main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 647.0
+texture = ExtResource("1_44stu")
+
+[node name="piece" type="Sprite2D" parent="."]
+position = Vector2(933, 161)
+scale = Vector2(0.106445, 0.108398)
+texture = ExtResource("2_pndna")
+offset = Vector2(-7000, 0)
+script = ExtResource("3_clobl")
+
+[node name="Button" type="Button" parent="piece"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -7421.67
+offset_top = -424.362
+offset_right = -6575.67
+offset_bottom = 423.638
+metadata/_edit_use_anchors_ = true
+
+[node name="piece2" type="Sprite2D" parent="."]
+position = Vector2(933, 161)
+scale = Vector2(0.106445, 0.108398)
+texture = ExtResource("2_pndna")
+offset = Vector2(-7000, 1500)
+script = ExtResource("3_clobl")
+
+[node name="Button" type="Button" parent="piece2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -7421.67
+offset_top = 1079.35
+offset_right = -6575.67
+offset_bottom = 1927.35
+
+[node name="piece3" type="Sprite2D" parent="."]
+position = Vector2(933, 161)
+scale = Vector2(0.106445, 0.108398)
+texture = ExtResource("2_pndna")
+offset = Vector2(-7000, 3000)
+script = ExtResource("3_clobl")
+
+[node name="Button" type="Button" parent="piece3"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -7421.67
+offset_top = 2583.07
+offset_right = -6575.67
+offset_bottom = 3431.07
+
+[node name="piece4" type="Sprite2D" parent="."]
+position = Vector2(933, 161)
+scale = Vector2(0.106445, 0.108398)
+texture = ExtResource("2_pndna")
+script = ExtResource("3_clobl")
+
+[node name="Button" type="Button" parent="piece4"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -422.753
+offset_top = -424.362
+offset_right = 423.247
+offset_bottom = 423.638
+
+[node name="piece5" type="Sprite2D" parent="."]
+position = Vector2(933, 161)
+scale = Vector2(0.106445, 0.108398)
+texture = ExtResource("2_pndna")
+offset = Vector2(0, 1500)
+script = ExtResource("3_clobl")
+
+[node name="Button" type="Button" parent="piece5"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -422.753
+offset_top = 1070.13
+offset_right = 423.247
+offset_bottom = 1918.13
+
+[node name="piece6" type="Sprite2D" parent="."]
+position = Vector2(933, 161)
+scale = Vector2(0.106445, 0.108398)
+texture = ExtResource("2_pndna")
+offset = Vector2(0, 3000)
+script = ExtResource("3_clobl")
+
+[node name="Button" type="Button" parent="piece6"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -432.148
+offset_top = 2573.85
+offset_right = 413.852
+offset_bottom = 3421.85
+
+[node name="Teddy" type="Sprite2D" parent="."]
+position = Vector2(1071, 554)
+scale = Vector2(0.187755, 0.192602)
+texture = ExtResource("4_koyvg")
+
+[connection signal="button_down" from="piece/Button" to="piece" method="_on_button_button_down"]
+[connection signal="button_up" from="piece/Button" to="piece" method="_on_button_button_up"]
+[connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
+[connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
+[connection signal="button_down" from="piece3/Button" to="piece3" method="_on_button_button_down"]
+[connection signal="button_up" from="piece3/Button" to="piece3" method="_on_button_button_up"]
+[connection signal="button_down" from="piece4/Button" to="piece4" method="_on_button_button_down"]
+[connection signal="button_up" from="piece4/Button" to="piece4" method="_on_button_button_up"]
+[connection signal="button_down" from="piece5/Button" to="piece5" method="_on_button_button_down"]
+[connection signal="button_up" from="piece5/Button" to="piece5" method="_on_button_button_up"]
+[connection signal="button_down" from="piece6/Button" to="piece6" method="_on_button_button_down"]
+[connection signal="button_up" from="piece6/Button" to="piece6" method="_on_button_button_up"]
