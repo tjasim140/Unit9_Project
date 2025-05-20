@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://clkxnx54iayu2"]
+
+[ext_resource type="Texture2D" uid="uid://dfw7hvi40ol8p" path="res://Assets/white.jpeg" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://cu4cwas7p0aer" path="res://Assets/square.png" id="2_jjvhh"]
+[ext_resource type="Script" uid="uid://dtlr60uidlxb2" path="res://Scripts/piece.gd" id="3_kry3j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 645.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_8gbba")
+
+[node name="Piece" type="Sprite2D" parent="."]
+position = Vector2(995, 157)
+scale = Vector2(0.147949, 0.14209)
+texture = ExtResource("2_jjvhh")
+script = ExtResource("3_kry3j")
+
+[node name="Button" type="Button" parent="Piece"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -406.0
+offset_top = -408.0
+offset_right = 412.0
+offset_bottom = 415.0
+
+[connection signal="button_down" from="Piece/Button" to="Piece" method="_on_button_button_down"]
+[connection signal="button_up" from="Piece/Button" to="Piece" method="_on_button_button_up"]
