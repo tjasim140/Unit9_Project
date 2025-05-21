@@ -14,3 +14,4 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	drag = false
+

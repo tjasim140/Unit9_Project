@@ -1,9 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmkpw2js0qojk"]
+[gd_scene load_steps=14 format=3 uid="uid://dmkpw2js0qojk"]
 
 [ext_resource type="Texture2D" uid="uid://dfjd0kbf3jygh" path="res://Assets/white.jpeg" id="1_44stu"]
 [ext_resource type="Texture2D" uid="uid://b6m3msw6etdh7" path="res://Assets/square.png" id="2_pndna"]
 [ext_resource type="Script" path="res://Scripts/Piece.gd" id="3_clobl"]
 [ext_resource type="Texture2D" uid="uid://t52nmr5us0hf" path="res://Assets/teddy.WEBP" id="4_koyvg"]
+[ext_resource type="Texture2D" uid="uid://dpl2eg7sdfiv" path="res://Assets/grey.png" id="5_826gn"]
+[ext_resource type="Script" path="res://Scripts/board.gd" id="6_6ajpf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdqcl"]
+size = Vector2(216.699, 216.585)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2kah"]
+size = Vector2(854.9, 848.724)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2epuc"]
+size = Vector2(845.508, 867.175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lvfq"]
+size = Vector2(864.296, 848.725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0qwn"]
+size = Vector2(864.296, 857.949)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba864"]
+size = Vector2(854.902, 848.724)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65pbv"]
+size = Vector2(845.507, 848.724)
 
 [node name="main" type="Node2D"]
 
@@ -11,6 +34,25 @@
 offset_right = 1153.0
 offset_bottom = 647.0
 texture = ExtResource("1_44stu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Teddy" type="Sprite2D" parent="."]
+position = Vector2(1071, 554)
+scale = Vector2(0.187755, 0.192602)
+texture = ExtResource("4_koyvg")
+
+[node name="board" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(555, 324)
+scale = Vector2(2.00278, 1.91611)
+texture = ExtResource("5_826gn")
+script = ExtResource("6_6ajpf")
+
+[node name="Area2D" type="Area2D" parent="board"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Area2D"]
+position = Vector2(0, 0.260941)
+shape = SubResource("RectangleShape2D_qdqcl")
 
 [node name="piece" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
@@ -27,6 +69,13 @@ offset_right = -6575.67
 offset_bottom = 423.638
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D" type="Area2D" parent="piece"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece/Area2D"]
+position = Vector2(-7003.62, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_p2kah")
+
 [node name="piece2" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
 scale = Vector2(0.106445, 0.108398)
@@ -40,6 +89,13 @@ offset_left = -7421.67
 offset_top = 1079.35
 offset_right = -6575.67
 offset_bottom = 1927.35
+
+[node name="Area2D" type="Area2D" parent="piece2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece2/Area2D"]
+position = Vector2(-6998.92, 1503.72)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_2epuc")
 
 [node name="piece3" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
@@ -55,6 +111,14 @@ offset_top = 2583.07
 offset_right = -6575.67
 offset_bottom = 3431.07
 
+[node name="Area2D" type="Area2D" parent="piece3"]
+position = Vector2(-6998.92, 2998.21)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece3/Area2D"]
+position = Vector2(0.00195313, 0.00537109)
+shape = SubResource("RectangleShape2D_0lvfq")
+
 [node name="piece4" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
 scale = Vector2(0.106445, 0.108398)
@@ -67,6 +131,13 @@ offset_left = -422.753
 offset_top = -424.362
 offset_right = 423.247
 offset_bottom = 423.638
+
+[node name="Area2D" type="Area2D" parent="piece4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece4/Area2D"]
+position = Vector2(-0.000976563, 4.61243)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h0qwn")
 
 [node name="piece5" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
@@ -82,6 +153,13 @@ offset_top = 1070.13
 offset_right = 423.247
 offset_bottom = 1918.13
 
+[node name="Area2D" type="Area2D" parent="piece5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece5/Area2D"]
+position = Vector2(-4.69824, 1494.49)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ba864")
+
 [node name="piece6" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
 scale = Vector2(0.106445, 0.108398)
@@ -96,20 +174,36 @@ offset_top = 2573.85
 offset_right = 413.852
 offset_bottom = 3421.85
 
-[node name="Teddy" type="Sprite2D" parent="."]
-position = Vector2(1071, 554)
-scale = Vector2(0.187755, 0.192602)
-texture = ExtResource("4_koyvg")
+[node name="Area2D" type="Area2D" parent="piece6"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece6/Area2D"]
+position = Vector2(-0.000976563, 2998.21)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_65pbv")
+
+[connection signal="area_entered" from="board/Area2D" to="piece" method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="board/Area2D" to="piece" method="_on_area_2d_area_shape_entered"]
 [connection signal="button_down" from="piece/Button" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/Button" to="piece" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece/Area2D" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece2/Area2D" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece2/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece3/Button" to="piece3" method="_on_button_button_down"]
 [connection signal="button_up" from="piece3/Button" to="piece3" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece3/Area2D" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece3/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece4/Button" to="piece4" method="_on_button_button_down"]
 [connection signal="button_up" from="piece4/Button" to="piece4" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece4/Area2D" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece4/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece5/Button" to="piece5" method="_on_button_button_down"]
 [connection signal="button_up" from="piece5/Button" to="piece5" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece5/Area2D" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece5/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece6/Button" to="piece6" method="_on_button_button_down"]
 [connection signal="button_up" from="piece6/Button" to="piece6" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece6/Area2D" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece6/Area2D" to="board" method="_on_area_2d_area_exited"]
