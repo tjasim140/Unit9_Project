@@ -8,10 +8,10 @@ func _process (delta):
 		position = get_global_mouse_position() - of
 
 func _on_button_button_down() -> void:
-	drag = true
-	of = get_global_mouse_position()-global_position
-	
+	print(position)
+	if position!=Vector2(1140,173):
+		drag = true
+		of = get_global_mouse_position()-global_position
 
 func _on_button_button_up() -> void:
 	drag = false
-

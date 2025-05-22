@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmkpw2js0qojk"]
+[gd_scene load_steps=13 format=3 uid="uid://dmkpw2js0qojk"]
 
-[ext_resource type="Texture2D" uid="uid://dfjd0kbf3jygh" path="res://Assets/white.jpeg" id="1_44stu"]
 [ext_resource type="Texture2D" uid="uid://b6m3msw6etdh7" path="res://Assets/square.png" id="2_pndna"]
 [ext_resource type="Script" path="res://Scripts/Piece.gd" id="3_clobl"]
-[ext_resource type="Texture2D" uid="uid://t52nmr5us0hf" path="res://Assets/teddy.WEBP" id="4_koyvg"]
 [ext_resource type="Texture2D" uid="uid://dpl2eg7sdfiv" path="res://Assets/grey.png" id="5_826gn"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="6_6ajpf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ystvv"]
+load_path = "res://.godot/imported/white.jpeg-e44f693d421494bb22784364513d6af2.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdqcl"]
 size = Vector2(216.699, 216.585)
@@ -33,13 +34,8 @@ size = Vector2(845.507, 848.724)
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1153.0
 offset_bottom = 647.0
-texture = ExtResource("1_44stu")
+texture = SubResource("CompressedTexture2D_ystvv")
 metadata/_edit_use_anchors_ = true
-
-[node name="Teddy" type="Sprite2D" parent="."]
-position = Vector2(1071, 554)
-scale = Vector2(0.187755, 0.192602)
-texture = ExtResource("4_koyvg")
 
 [node name="board" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -48,11 +44,14 @@ scale = Vector2(2.00278, 1.91611)
 texture = ExtResource("5_826gn")
 script = ExtResource("6_6ajpf")
 
-[node name="Area2D" type="Area2D" parent="board"]
+[node name="board" type="Area2D" parent="board"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/board"]
 position = Vector2(0, 0.260941)
 shape = SubResource("RectangleShape2D_qdqcl")
+
+[node name="TileMap" type="TileMap" parent="board/board"]
+format = 2
 
 [node name="piece" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
@@ -61,7 +60,7 @@ texture = ExtResource("2_pndna")
 offset = Vector2(-7000, 0)
 script = ExtResource("3_clobl")
 
-[node name="Button" type="Button" parent="piece"]
+[node name="piece2" type="Button" parent="piece"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -7421.67
 offset_top = -424.362
@@ -69,11 +68,10 @@ offset_right = -6575.67
 offset_bottom = 423.638
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="piece"]
+[node name="piece" type="Area2D" parent="piece"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="piece/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece/piece"]
 position = Vector2(-7003.62, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_p2kah")
 
 [node name="piece2" type="Sprite2D" parent="."]
@@ -90,11 +88,10 @@ offset_top = 1079.35
 offset_right = -6575.67
 offset_bottom = 1927.35
 
-[node name="Area2D" type="Area2D" parent="piece2"]
+[node name="piece2" type="Area2D" parent="piece2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="piece2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece2/piece2"]
 position = Vector2(-6998.92, 1503.72)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2epuc")
 
 [node name="piece3" type="Sprite2D" parent="."]
@@ -113,7 +110,6 @@ offset_bottom = 3431.07
 
 [node name="Area2D" type="Area2D" parent="piece3"]
 position = Vector2(-6998.92, 2998.21)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece3/Area2D"]
 position = Vector2(0.00195313, 0.00537109)
@@ -136,7 +132,6 @@ offset_bottom = 423.638
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece4/Area2D"]
 position = Vector2(-0.000976563, 4.61243)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h0qwn")
 
 [node name="piece5" type="Sprite2D" parent="."]
@@ -157,7 +152,6 @@ offset_bottom = 1918.13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece5/Area2D"]
 position = Vector2(-4.69824, 1494.49)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ba864")
 
 [node name="piece6" type="Sprite2D" parent="."]
@@ -178,19 +172,19 @@ offset_bottom = 3421.85
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece6/Area2D"]
 position = Vector2(-0.000976563, 2998.21)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_65pbv")
 
-[connection signal="area_entered" from="board/Area2D" to="piece" method="_on_area_2d_area_entered"]
-[connection signal="area_shape_entered" from="board/Area2D" to="piece" method="_on_area_2d_area_shape_entered"]
-[connection signal="button_down" from="piece/Button" to="piece" method="_on_button_button_down"]
-[connection signal="button_up" from="piece/Button" to="piece" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece/Area2D" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece/Area2D" to="board" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="board/board" to="piece" method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="board/board" to="piece" method="_on_area_2d_area_shape_entered"]
+[connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
+[connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece/piece" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="piece/piece" to="piece2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece/piece" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece2/Area2D" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece2/Area2D" to="board" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="piece2/piece2" to="board" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="piece2/piece2" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece3/Button" to="piece3" method="_on_button_button_down"]
 [connection signal="button_up" from="piece3/Button" to="piece3" method="_on_button_button_up"]
 [connection signal="area_entered" from="piece3/Area2D" to="board" method="_on_area_2d_area_entered"]

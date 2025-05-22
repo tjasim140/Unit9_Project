@@ -13,12 +13,17 @@ func _process(delta):
 
 
 func _on_area_2d_area_entered(area):
-	count = count+1
-	print(count)
-	pass # Replace with function body.
+	if area.name == "board":
+		count = count+1
+		print(count)
+
+# Replace with function body.
 
 
 func _on_area_2d_area_exited(area):
-	count = count - 1
-	print (count) 
-	pass # Replace with function body.
+	if area.name == "board":
+		count = count - 1
+		print (count) 
+# Replace with function body.
+	
+	
