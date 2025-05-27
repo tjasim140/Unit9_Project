@@ -2,16 +2,19 @@ extends Sprite2D
 var drag = false
 var of = Vector2(0,0)
 
-
 func _process (delta):
 	if drag:
 		position = get_global_mouse_position() - of
 
 func _on_button_button_down() -> void:
-	print(position)
-	if position!=Vector2(1140,173):
-		drag = true
-		of = get_global_mouse_position()-global_position
-
+	drag = true
+	of = get_global_mouse_position()-global_position
+	
 func _on_button_button_up() -> void:
 	drag = false
+	
+
+func _on_space_area_entered(area):
+	if area.name == "space":
+		print("BDFIBUWS")
+	 # Replace with function body.

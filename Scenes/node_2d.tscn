@@ -1,15 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmkpw2js0qojk"]
+[gd_scene load_steps=15 format=3 uid="uid://dmkpw2js0qojk"]
 
+[ext_resource type="Texture2D" uid="uid://b8s3q1al1rhy8" path="res://Assets/light-blue.jpg" id="1_8nxu7"]
 [ext_resource type="Texture2D" uid="uid://b6m3msw6etdh7" path="res://Assets/square.png" id="2_pndna"]
 [ext_resource type="Script" path="res://Scripts/Piece.gd" id="3_clobl"]
 [ext_resource type="Texture2D" uid="uid://dpl2eg7sdfiv" path="res://Assets/grey.png" id="5_826gn"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="6_6ajpf"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ystvv"]
-load_path = "res://.godot/imported/white.jpeg-e44f693d421494bb22784364513d6af2.ctex"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdqcl"]
 size = Vector2(216.699, 216.585)
+
+[sub_resource type="GDScript" id="GDScript_8mhgi"]
+resource_name = "space"
+script/source = "extends TextureRect
+var entered = false
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+func _on_area_2d_area_entered(area):
+	if area.name == \"space\":
+		print(entered)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpway"]
+size = Vector2(49.4312, 51.1453)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2kah"]
 size = Vector2(854.9, 848.724)
@@ -32,10 +46,11 @@ size = Vector2(845.507, 848.724)
 [node name="main" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1153.0
-offset_bottom = 647.0
-texture = SubResource("CompressedTexture2D_ystvv")
-metadata/_edit_use_anchors_ = true
+offset_left = -3.0
+offset_top = 5.0
+offset_right = 1150.0
+offset_bottom = 652.0
+texture = ExtResource("1_8nxu7")
 
 [node name="board" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -50,8 +65,22 @@ script = ExtResource("6_6ajpf")
 position = Vector2(0, 0.260941)
 shape = SubResource("RectangleShape2D_qdqcl")
 
-[node name="TileMap" type="TileMap" parent="board/board"]
-format = 2
+[node name="TextureRect" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -105.0
+offset_top = -105.0
+offset_right = -53.0
+offset_bottom = -51.0
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = SubResource("GDScript_8mhgi")
+
+[node name="space" type="Area2D" parent="board/TextureRect"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/TextureRect/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
 
 [node name="piece" type="Sprite2D" parent="."]
 position = Vector2(933, 161)
@@ -66,7 +95,6 @@ offset_left = -7421.67
 offset_top = -424.362
 offset_right = -6575.67
 offset_bottom = 423.638
-metadata/_edit_use_anchors_ = true
 
 [node name="piece" type="Area2D" parent="piece"]
 
@@ -174,13 +202,14 @@ offset_bottom = 3421.85
 position = Vector2(-0.000976563, 2998.21)
 shape = SubResource("RectangleShape2D_65pbv")
 
-[connection signal="area_entered" from="board/board" to="piece" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="board/board" to="piece2" method="_on_area_2d_area_entered"]
 [connection signal="area_shape_entered" from="board/board" to="piece" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_entered" from="board/TextureRect/space" to="piece" method="_on_space_area_entered"]
 [connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
 [connection signal="area_entered" from="piece/piece" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="piece/piece" to="piece2" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="piece/piece" to="board" method="_on_area_2d_area_exited"]
+[connection signal="area_shape_entered" from="piece/piece" to="board/TextureRect" method="_on_piece_area_shape_entered"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
 [connection signal="area_entered" from="piece2/piece2" to="board" method="_on_area_2d_area_entered"]
