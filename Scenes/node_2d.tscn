@@ -3,24 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://b8s3q1al1rhy8" path="res://Assets/light-blue.jpg" id="1_8nxu7"]
 [ext_resource type="Texture2D" uid="uid://b6m3msw6etdh7" path="res://Assets/square.png" id="2_pndna"]
 [ext_resource type="Script" path="res://Scripts/Piece.gd" id="3_clobl"]
+[ext_resource type="Script" path="res://Scripts/space.gd" id="4_kr2ju"]
 [ext_resource type="Texture2D" uid="uid://dpl2eg7sdfiv" path="res://Assets/grey.png" id="5_826gn"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="6_6ajpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdqcl"]
 size = Vector2(216.699, 216.585)
-
-[sub_resource type="GDScript" id="GDScript_8mhgi"]
-resource_name = "space"
-script/source = "extends TextureRect
-var entered = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func _on_area_2d_area_entered(area):
-	if area.name == \"space\":
-		print(entered)
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpway"]
 size = Vector2(49.4312, 51.1453)
@@ -65,20 +53,275 @@ script = ExtResource("6_6ajpf")
 position = Vector2(0, 0.260941)
 shape = SubResource("RectangleShape2D_qdqcl")
 
-[node name="TextureRect" type="TextureRect" parent="board"]
+[node name="Space1" type="TextureRect" parent="board"]
 self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
 offset_left = -105.0
-offset_top = -105.0
+offset_top = -106.566
 offset_right = -53.0
-offset_bottom = -51.0
+offset_bottom = -52.5657
 texture = ExtResource("5_826gn")
 expand_mode = 1
-script = SubResource("GDScript_8mhgi")
+script = ExtResource("4_kr2ju")
 
-[node name="space" type="Area2D" parent="board/TextureRect"]
+[node name="space" type="Area2D" parent="board/Space1"]
 position = Vector2(2.64228, 4.2751)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="board/TextureRect/space"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space1/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space2" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -51.5743
+offset_top = -106.566
+offset_right = 0.425735
+offset_bottom = -52.5657
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space2"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space2/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space3" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 1.35217
+offset_top = -106.566
+offset_right = 53.3522
+offset_bottom = -52.5657
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space3"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space3/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space4" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 54.2786
+offset_top = -106.566
+offset_right = 106.279
+offset_bottom = -52.5657
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space4"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space4/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space5" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -105.0
+offset_top = -52.8109
+offset_right = -53.0
+offset_bottom = 1.18907
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space5"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space5/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space6" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -51.5743
+offset_top = -53.3328
+offset_right = 0.425735
+offset_bottom = 0.667183
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space6"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space6/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space7" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 1.35217
+offset_top = -52.811
+offset_right = 53.3522
+offset_bottom = 1.18905
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space7"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space7/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space8" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 54.2786
+offset_top = -52.811
+offset_right = 106.279
+offset_bottom = 1.18905
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space8"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space8/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space9" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -105.0
+offset_top = 0.421928
+offset_right = -53.0
+offset_bottom = 54.4219
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space9"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space9/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space10" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -51.5743
+offset_top = 0.943825
+offset_right = 0.425735
+offset_bottom = 54.9438
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space10"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space10/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space11" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 1.35217
+offset_top = 0.421928
+offset_right = 53.3522
+offset_bottom = 54.4219
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space11"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space11/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space12" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 54.2786
+offset_top = 0.421928
+offset_right = 106.279
+offset_bottom = 54.4219
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space12"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space12/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space13" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -105.0
+offset_top = 54.1767
+offset_right = -53.0
+offset_bottom = 108.177
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space13"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space13/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space14" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = -51.5743
+offset_top = 53.6548
+offset_right = 0.425735
+offset_bottom = 107.655
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space14"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space14/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space15" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 1.35217
+offset_top = 54.1766
+offset_right = 53.3522
+offset_bottom = 108.177
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space15"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space15/space"]
+position = Vector2(23.2177, 22.9632)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space16" type="TextureRect" parent="board"]
+self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
+offset_left = 54.2786
+offset_top = 54.1766
+offset_right = 106.279
+offset_bottom = 108.177
+texture = ExtResource("5_826gn")
+expand_mode = 1
+script = ExtResource("4_kr2ju")
+
+[node name="space" type="Area2D" parent="board/Space16"]
+position = Vector2(2.64228, 4.2751)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space16/space"]
 position = Vector2(23.2177, 22.9632)
 shape = SubResource("RectangleShape2D_kpway")
 
@@ -204,12 +447,12 @@ shape = SubResource("RectangleShape2D_65pbv")
 
 [connection signal="area_entered" from="board/board" to="piece2" method="_on_area_2d_area_entered"]
 [connection signal="area_shape_entered" from="board/board" to="piece" method="_on_area_2d_area_shape_entered"]
-[connection signal="area_entered" from="board/TextureRect/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="board/Space3/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="board/Space11/space" to="piece" method="_on_space_area_entered"]
 [connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
 [connection signal="area_entered" from="piece/piece" to="board" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="piece/piece" to="board" method="_on_area_2d_area_exited"]
-[connection signal="area_shape_entered" from="piece/piece" to="board/TextureRect" method="_on_piece_area_shape_entered"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
 [connection signal="area_entered" from="piece2/piece2" to="board" method="_on_area_2d_area_entered"]
