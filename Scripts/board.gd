@@ -19,7 +19,6 @@ func _on_area_2d_area_entered(area):
 
 # Replace with function body.
 
-
 func _on_area_2d_area_exited(area):
 	if area.name == "board":
 		count = count - 1

@@ -15,6 +15,7 @@ func _on_button_button_up() -> void:
 	
 
 func _on_space_area_entered(area):
-	if area.name == "space":
-		print("BDFIBUWS")
-	 # Replace with function body.
+	var pos = area.position
+	if area is Space:
+		drag = false
+		print("working")
