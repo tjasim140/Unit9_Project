@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmkpw2js0qojk"]
+[gd_scene load_steps=14 format=3 uid="uid://dmkpw2js0qojk"]
 
 [ext_resource type="Texture2D" uid="uid://b8s3q1al1rhy8" path="res://Assets/light-blue.jpg" id="1_v5cax"]
 [ext_resource type="Texture2D" uid="uid://dpl2eg7sdfiv" path="res://Assets/grey.png" id="2_xd055"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="3_ag7os"]
-[ext_resource type="Script" path="res://Scripts/space.gd" id="4_pkhtm"]
 [ext_resource type="Texture2D" uid="uid://b6m3msw6etdh7" path="res://Assets/square.png" id="5_36vw7"]
 [ext_resource type="Script" path="res://Scripts/Piece.gd" id="6_wx4hl"]
 
@@ -11,13 +10,13 @@
 size = Vector2(216.699, 216.585)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpway"]
-size = Vector2(5, 5)
+size = Vector2(30.2787, 30.2706)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2kah"]
-size = Vector2(86.8968, 83.027)
+size = Vector2(93.9453, 87.6397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2epuc"]
-size = Vector2(845.508, 867.175)
+size = Vector2(140.918, 138.377)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lvfq"]
 size = Vector2(864.296, 848.725)
@@ -35,13 +34,12 @@ size = Vector2(845.507, 848.724)
 position = Vector2(2, -4)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -3.0
-offset_top = 5.0
-offset_right = 1150.0
-offset_bottom = 652.0
+offset_left = -14.0
+offset_top = -3.0
+offset_right = 1139.0
+offset_bottom = 644.0
 pivot_offset = Vector2(410, 176)
 texture = ExtResource("1_v5cax")
-metadata/_edit_use_anchors_ = true
 
 [node name="board" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -56,99 +54,51 @@ script = ExtResource("3_ag7os")
 position = Vector2(0, 0.260941)
 shape = SubResource("RectangleShape2D_qdqcl")
 
-[node name="Space1" type="TextureRect" parent="board"]
-self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
-offset_left = -103.0
-offset_top = -105.0
-offset_right = -55.0
-offset_bottom = -55.0
+[node name="Space1" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(396, 173)
+scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
-expand_mode = 1
-script = ExtResource("4_pkhtm")
 metadata/_edit_use_anchors_ = true
 
-[node name="space" type="Area2D" parent="board/Space1"]
-position = Vector2(24.1124, 23.5851)
+[node name="space" type="Area2D" parent="Space1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space1/space"]
-position = Vector2(-0.00278258, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space1/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
 shape = SubResource("RectangleShape2D_kpway")
 
-[node name="Space2" type="TextureRect" parent="board"]
-self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
-offset_left = -50.9292
-offset_top = -104.9
-offset_right = -1.92924
-offset_bottom = -54.9005
-pivot_offset = Vector2(24.1124, 25.0627)
+[node name="Space2" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(396, 173)
+scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
-expand_mode = 1
-script = ExtResource("4_pkhtm")
 metadata/_edit_use_anchors_ = true
 
-[node name="space2" type="Area2D" parent="board/Space2"]
-position = Vector2(23.9667, 25.0508)
+[node name="space" type="Area2D" parent="Space2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space2/space2"]
-position = Vector2(-0.003, 0)
-shape = SubResource("RectangleShape2D_kpway")
-
-[node name="Space3" type="TextureRect" parent="board"]
-self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
-offset_left = 1.85147
-offset_top = -104.912
-offset_right = 50.8515
-offset_bottom = -54.9125
-texture = ExtResource("2_xd055")
-expand_mode = 1
-script = ExtResource("4_pkhtm")
-metadata/_edit_use_anchors_ = true
-
-[node name="space" type="Area2D" parent="board/Space3"]
-position = Vector2(24.1124, 24.6288)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space3/space"]
-position = Vector2(7.62939e-06, -0.0880051)
-shape = SubResource("RectangleShape2D_kpway")
-
-[node name="Space4" type="TextureRect" parent="board"]
-self_modulate = Color(0.669291, 0.730833, 0.817121, 0.588235)
-offset_left = 53.28
-offset_top = -104.912
-offset_right = 102.28
-offset_bottom = -54.9125
-texture = ExtResource("2_xd055")
-expand_mode = 1
-script = ExtResource("4_pkhtm")
-metadata/_edit_use_anchors_ = true
-
-[node name="space" type="Area2D" parent="board/Space4"]
-position = Vector2(25.1111, 24.6288)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="board/Space4/space"]
-position = Vector2(-1.52588e-05, -0.0880032)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space2/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
 shape = SubResource("RectangleShape2D_kpway")
 
 [node name="piece" type="Sprite2D" parent="."]
-position = Vector2(397, 168)
+position = Vector2(187, 173)
 scale = Vector2(0.106445, 0.108398)
 texture = ExtResource("5_36vw7")
-offset = Vector2(-1983.32, -83.0275)
 script = ExtResource("6_wx4hl")
 
 [node name="piece2" type="Button" parent="piece"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -2405.0
-offset_top = -507.389
-offset_right = -1559.0
-offset_bottom = 340.611
+offset_left = -422.756
+offset_top = -424.36
+offset_right = 423.244
+offset_bottom = 423.64
 metadata/_edit_use_anchors_ = true
 
 [node name="piece" type="Area2D" parent="piece"]
-position = Vector2(-1982.24, -83.0269)
+position = Vector2(0.000732422, -0.000137329)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece/piece"]
-position = Vector2(-0.00433874, -0.000424385)
+position = Vector2(-2.67029e-05, 0.000110626)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_p2kah")
 
@@ -171,6 +121,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece2/piece2"]
 position = Vector2(-6998.92, 1503.72)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2epuc")
 
 [node name="piece3" type="Sprite2D" parent="."]
@@ -257,33 +208,18 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-0.000976563, 2998.21)
 shape = SubResource("RectangleShape2D_65pbv")
 
-[connection signal="area_entered" from="board/board" to="piece2" method="_on_area_2d_area_entered"]
-[connection signal="area_shape_entered" from="board/board" to="piece" method="_on_area_2d_area_shape_entered"]
-[connection signal="area_entered" from="board/Space1/space" to="piece" method="_on_space_area_entered"]
-[connection signal="area_entered" from="board/Space2/space2" to="piece" method="_on_space_2_area_entered"]
+[connection signal="area_entered" from="Space1/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space2/space" to="piece2" method="_on_space_area_entered"]
 [connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece/piece" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_entered" from="piece/piece" to="board/Space1" method="_on_piece_area_entered"]
-[connection signal="area_entered" from="piece/piece" to="board/Space2" method="_on_piece_area_entered"]
-[connection signal="area_exited" from="piece/piece" to="board" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="piece/piece" to="Space1" method="_on_piece_area_entered"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece2/piece2" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece2/piece2" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece3/Button" to="piece3" method="_on_button_button_down"]
 [connection signal="button_up" from="piece3/Button" to="piece3" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece3/Area2D" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece3/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece4/Button" to="piece4" method="_on_button_button_down"]
 [connection signal="button_up" from="piece4/Button" to="piece4" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece4/Area2D" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece4/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece5/Button" to="piece5" method="_on_button_button_down"]
 [connection signal="button_up" from="piece5/Button" to="piece5" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece5/Area2D" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece5/Area2D" to="board" method="_on_area_2d_area_exited"]
 [connection signal="button_down" from="piece6/Button" to="piece6" method="_on_button_button_down"]
 [connection signal="button_up" from="piece6/Button" to="piece6" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece6/Area2D" to="board" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="piece6/Area2D" to="board" method="_on_area_2d_area_exited"]
