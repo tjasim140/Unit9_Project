@@ -10,34 +10,34 @@
 size = Vector2(216.699, 216.585)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpway"]
-size = Vector2(30.2787, 30.2706)
+size = Vector2(22.7104, 22.869)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2kah"]
 size = Vector2(93.9453, 87.6397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2epuc"]
-size = Vector2(140.918, 138.377)
+size = Vector2(70.459, 78.4116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lvfq"]
-size = Vector2(864.296, 848.725)
+size = Vector2(56.3661, 59.9671)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0qwn"]
-size = Vector2(864.296, 857.949)
+size = Vector2(84.5513, 83.0272)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba864"]
-size = Vector2(854.902, 848.724)
+size = Vector2(93.9471, 101.48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65pbv"]
-size = Vector2(845.507, 848.724)
+size = Vector2(84.5513, 92.2528)
 
 [node name="main" type="Node2D"]
 position = Vector2(2, -4)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -14.0
-offset_top = -3.0
-offset_right = 1139.0
-offset_bottom = 644.0
+offset_left = -3.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 651.0
 pivot_offset = Vector2(410, 176)
 texture = ExtResource("1_v5cax")
 
@@ -56,7 +56,7 @@ shape = SubResource("RectangleShape2D_qdqcl")
 
 [node name="Space1" type="Sprite2D" parent="."]
 self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
-position = Vector2(396, 173)
+position = Vector2(404, 184)
 scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
@@ -69,7 +69,7 @@ shape = SubResource("RectangleShape2D_kpway")
 
 [node name="Space2" type="Sprite2D" parent="."]
 self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
-position = Vector2(396, 173)
+position = Vector2(504, 184)
 scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
@@ -77,6 +77,32 @@ metadata/_edit_use_anchors_ = true
 [node name="space" type="Area2D" parent="Space2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space2/space"]
+position = Vector2(0, 0.000116348)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space3" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(603, 184)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space3/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space4" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(705, 184)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space4/space"]
 position = Vector2(2.28882e-05, 5.34058e-05)
 shape = SubResource("RectangleShape2D_kpway")
 
@@ -99,7 +125,6 @@ position = Vector2(0.000732422, -0.000137329)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece/piece"]
 position = Vector2(-2.67029e-05, 0.000110626)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_p2kah")
 
 [node name="piece2" type="Sprite2D" parent="."]
@@ -120,7 +145,7 @@ metadata/_edit_use_anchors_ = true
 [node name="piece2" type="Area2D" parent="piece2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece2/piece2"]
-position = Vector2(-6998.92, 1503.72)
+position = Vector2(-6998.92, 1494.49)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2epuc")
 
@@ -139,11 +164,12 @@ offset_right = -6575.67
 offset_bottom = 3431.07
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="piece3"]
+[node name="piece3" type="Area2D" parent="piece3"]
 position = Vector2(-6998.92, 2998.21)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="piece3/Area2D"]
-position = Vector2(0.00195313, 0.00537109)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece3/piece3"]
+position = Vector2(0.000488281, -2.30664)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0lvfq")
 
 [node name="piece4" type="Sprite2D" parent="."]
@@ -160,10 +186,11 @@ offset_right = 423.247
 offset_bottom = 423.638
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="piece4"]
+[node name="piece4" type="Area2D" parent="piece4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="piece4/Area2D"]
-position = Vector2(-0.000976563, 4.61243)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece4/piece4"]
+position = Vector2(-0.000183105, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h0qwn")
 
 [node name="piece5" type="Sprite2D" parent="."]
@@ -184,7 +211,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="piece5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece5/Area2D"]
-position = Vector2(-4.69824, 1494.49)
+position = Vector2(9.39355, 1489.88)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ba864")
 
 [node name="piece6" type="Sprite2D" parent="."]
@@ -205,13 +233,18 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="piece6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece6/Area2D"]
-position = Vector2(-0.000976563, 2998.21)
+position = Vector2(-4.69824, 2988.99)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_65pbv")
 
+[connection signal="area_entered" from="board/board" to="piece" method="_on_board_area_entered"]
 [connection signal="area_entered" from="Space1/space" to="piece" method="_on_space_area_entered"]
 [connection signal="area_entered" from="Space2/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space3/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space4/space" to="piece4" method="_on_space_area_entered"]
 [connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
+[connection signal="area_entered" from="piece/piece" to="board" method="_on_piece_area_entered"]
 [connection signal="area_entered" from="piece/piece" to="Space1" method="_on_piece_area_entered"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]

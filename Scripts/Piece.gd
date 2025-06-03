@@ -8,6 +8,7 @@ func _process (delta):
 	if drag:
 		if entered==false:
 			position = get_global_mouse_position() - of
+		
 
 func _on_button_button_down() -> void:
 	drag = true
@@ -22,3 +23,4 @@ func _on_space_area_entered(area):
 		entered = true
 		drag = false
 	pass # Replace with function body.
+
