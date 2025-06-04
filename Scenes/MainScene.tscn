@@ -16,10 +16,10 @@ size = Vector2(22.7104, 22.869)
 size = Vector2(93.9453, 87.6397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2epuc"]
-size = Vector2(70.459, 78.4116)
+size = Vector2(82.2022, 78.4116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lvfq"]
-size = Vector2(56.3661, 59.9671)
+size = Vector2(93.9443, 92.2536)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0qwn"]
 size = Vector2(84.5513, 83.0272)
@@ -56,7 +56,7 @@ shape = SubResource("RectangleShape2D_qdqcl")
 
 [node name="Space1" type="Sprite2D" parent="."]
 self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
-position = Vector2(404, 184)
+position = Vector2(404, 176)
 scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
@@ -69,7 +69,7 @@ shape = SubResource("RectangleShape2D_kpway")
 
 [node name="Space2" type="Sprite2D" parent="."]
 self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
-position = Vector2(504, 184)
+position = Vector2(504, 176)
 scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
@@ -82,7 +82,7 @@ shape = SubResource("RectangleShape2D_kpway")
 
 [node name="Space3" type="Sprite2D" parent="."]
 self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
-position = Vector2(603, 184)
+position = Vector2(603, 176)
 scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
@@ -95,14 +95,172 @@ shape = SubResource("RectangleShape2D_kpway")
 
 [node name="Space4" type="Sprite2D" parent="."]
 self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
-position = Vector2(705, 184)
+position = Vector2(705, 176)
 scale = Vector2(0.39625, 0.387916)
 texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
 
 [node name="space" type="Area2D" parent="Space4"]
+position = Vector2(0, -2.57788)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space4/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space5" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(404, 276)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space5/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space6" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(504, 276)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space6/space"]
+position = Vector2(0, 0.000116348)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space7" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(603, 276)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space7/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space8" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(705, 276)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space8/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space9" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(404, 375)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space9/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space10" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(504, 375)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space10/space"]
+position = Vector2(0, 0.000116348)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space11" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(603, 375)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space11/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space12" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(705, 375)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space12"]
+position = Vector2(0, -2.57788)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space12/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space13" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(404, 475)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space13/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space14" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(504, 475)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space14/space"]
+position = Vector2(0, 0.000116348)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space15" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(603, 475)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space15/space"]
+position = Vector2(2.28882e-05, 5.34058e-05)
+shape = SubResource("RectangleShape2D_kpway")
+
+[node name="Space16" type="Sprite2D" parent="."]
+self_modulate = Color(0.670588, 0.729412, 0.815686, 0.196078)
+position = Vector2(705, 475)
+scale = Vector2(0.39625, 0.387916)
+texture = ExtResource("2_xd055")
+metadata/_edit_use_anchors_ = true
+
+[node name="space" type="Area2D" parent="Space16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space16/space"]
 position = Vector2(2.28882e-05, 5.34058e-05)
 shape = SubResource("RectangleShape2D_kpway")
 
@@ -145,7 +303,7 @@ metadata/_edit_use_anchors_ = true
 [node name="piece2" type="Area2D" parent="piece2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece2/piece2"]
-position = Vector2(-6998.92, 1494.49)
+position = Vector2(-6993.05, 1494.49)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2epuc")
 
@@ -168,7 +326,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-6998.92, 2998.21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece3/piece3"]
-position = Vector2(0.000488281, -2.30664)
+position = Vector2(5.34058e-05, 0.000255585)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0lvfq")
 
@@ -190,7 +348,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="piece4/piece4"]
 position = Vector2(-0.000183105, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h0qwn")
 
 [node name="piece5" type="Sprite2D" parent="."]
@@ -208,11 +365,10 @@ offset_right = 423.247
 offset_bottom = 1918.13
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="piece5"]
+[node name="piece5" type="Area2D" parent="piece5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="piece5/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece5/piece5"]
 position = Vector2(9.39355, 1489.88)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ba864")
 
 [node name="piece6" type="Sprite2D" parent="."]
@@ -230,18 +386,109 @@ offset_right = 413.852
 offset_bottom = 3421.85
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="piece6"]
+[node name="piece6" type="Area2D" parent="piece6"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="piece6/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="piece6/piece6"]
 position = Vector2(-4.69824, 2988.99)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_65pbv")
 
 [connection signal="area_entered" from="board/board" to="piece" method="_on_board_area_entered"]
 [connection signal="area_entered" from="Space1/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space1/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space1/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space1/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space1/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space1/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space2/space" to="piece" method="_on_space_area_entered"]
 [connection signal="area_entered" from="Space2/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space2/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space2/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space2/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space2/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space3/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space3/space" to="piece2" method="_on_space_area_entered"]
 [connection signal="area_entered" from="Space3/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space3/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space3/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space3/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space4/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space4/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space4/space" to="piece3" method="_on_space_area_entered"]
 [connection signal="area_entered" from="Space4/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space4/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space4/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space5/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space5/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space5/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space5/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space5/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space5/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space6/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space6/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space6/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space6/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space6/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space6/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space7/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space7/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space7/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space7/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space7/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space7/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space8/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space8/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space8/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space8/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space8/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space8/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space9/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space9/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space9/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space9/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space9/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space9/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space10/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space10/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space10/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space10/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space10/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space10/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space11/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space11/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space11/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space11/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space11/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space11/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space12/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space12/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space12/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space12/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space12/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space12/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space13/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space13/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space13/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space13/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space13/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space13/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space14/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space14/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space14/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space14/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space14/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space14/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space15/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space15/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space15/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space15/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space15/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space15/space" to="piece6" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space16/space" to="piece" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space16/space" to="piece2" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space16/space" to="piece3" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space16/space" to="piece4" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space16/space" to="piece5" method="_on_space_area_entered"]
+[connection signal="area_entered" from="Space16/space" to="piece6" method="_on_space_area_entered"]
 [connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
 [connection signal="area_entered" from="piece/piece" to="board" method="_on_piece_area_entered"]
