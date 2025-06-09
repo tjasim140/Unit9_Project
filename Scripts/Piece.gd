@@ -10,8 +10,6 @@ func _process (delta):
 		if entered==false:
 			position = get_global_mouse_position() - of
 		
-		
-
 func _on_button_button_down() -> void:
 	drag = true
 	of = get_global_mouse_position()-global_position
@@ -26,5 +24,6 @@ func _on_space_area_entered(area):
 	if area.name.contains("piece"):
 		entered = true
 		drag = false
+		self.texture=load("res://Assets/blue-square-emoji-clipart-xl.png")
 	pass # Replace with function body.
 
