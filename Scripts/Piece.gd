@@ -24,6 +24,6 @@ func _on_space_area_entered(area):
 	if area.name.contains("piece"):
 		entered = true
 		drag = false
-		self.texture=load("res://Assets/blue-square-emoji-clipart-xl.png")
+		area.get_parent().texture = load("res://Assets/blue-square-emoji-clipart-xl.png")
 	pass # Replace with function body.
 

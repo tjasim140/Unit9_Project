@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dd4wmtxet5av3"]
+[gd_scene load_steps=15 format=3 uid="uid://dd4wmtxet5av3"]
 
 [ext_resource type="Texture2D" uid="uid://44kvhaju0b6f" path="res://Assets/light-blue.jpg" id="1_v5cax"]
 [ext_resource type="Texture2D" uid="uid://d3qiu34sqcq6x" path="res://Assets/grey.png" id="2_xd055"]
 [ext_resource type="Script" path="res://Scripts/board.gd" id="3_ag7os"]
+[ext_resource type="Script" path="res://Scripts/space.gd" id="4_fkt8q"]
 [ext_resource type="Texture2D" uid="uid://cnwj0oq233108" path="res://Assets/square.png" id="5_36vw7"]
 [ext_resource type="Script" path="res://Scripts/Piece.gd" id="6_wx4hl"]
 
@@ -62,6 +63,7 @@ texture = ExtResource("2_xd055")
 metadata/_edit_use_anchors_ = true
 
 [node name="space" type="Area2D" parent="Space1"]
+script = ExtResource("4_fkt8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Space1/space"]
 position = Vector2(2.28882e-05, 5.34058e-05)
@@ -489,8 +491,7 @@ shape = SubResource("RectangleShape2D_65pbv")
 [connection signal="area_entered" from="Space16/space" to="piece6" method="_on_space_area_entered"]
 [connection signal="button_down" from="piece/piece2" to="piece" method="_on_button_button_down"]
 [connection signal="button_up" from="piece/piece2" to="piece" method="_on_button_button_up"]
-[connection signal="area_entered" from="piece/piece" to="board" method="_on_piece_area_entered"]
-[connection signal="area_entered" from="piece/piece" to="Space1" method="_on_piece_area_entered"]
+[connection signal="area_entered" from="piece/piece" to="Space1/space" method="_on_piece_area_entered"]
 [connection signal="button_down" from="piece2/Button" to="piece2" method="_on_button_button_down"]
 [connection signal="button_up" from="piece2/Button" to="piece2" method="_on_button_button_up"]
 [connection signal="button_down" from="piece3/Button" to="piece3" method="_on_button_button_down"]

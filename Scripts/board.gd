@@ -5,8 +5,10 @@ var count = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
 	pass
+
+func _update_count():
+	count = count + 1
 
 func _on_piece_area_entered(area):
 	
